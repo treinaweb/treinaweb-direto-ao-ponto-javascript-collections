@@ -1,15 +1,13 @@
-const map = new Map();
-
-let obj = {};
-
-const weakMap = new WeakMap();
-
-weakMap.set(obj, "valor");
-
-// map.set(obj, "valor");
-
-// console.log(map.get(obj));
-
-obj = null;
-
-console.log(weakMap.get(obj));
+var set = new Set();
+set.add(2);
+set.add(1);
+set.add(1);
+for (let item of set) {
+    console.log(item, 'daw');
+}
+set.delete(1);
+console.log(set.size);
+console.log(set.has(1));
+set.delete(1);
+console.log(set.has(1));
+console.log(set);
