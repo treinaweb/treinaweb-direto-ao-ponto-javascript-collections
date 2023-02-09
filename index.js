@@ -1,14 +1,15 @@
 const map = new Map();
 
-const chamveObj = {};
+let obj = {};
 
-const obj = {
-    chamveObj: "Ariel"
-};
+const weakMap = new WeakMap();
 
-map.set({}, 'meu objeto');
+weakMap.set(obj, "valor");
 
-console.log(obj.chamveObj);
+// map.set(obj, "valor");
 
-console.log('OBJ', obj);
-console.log('MAP', map);
+// console.log(map.get(obj));
+
+obj = null;
+
+console.log(weakMap.get(obj));
