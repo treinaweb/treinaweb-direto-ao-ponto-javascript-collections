@@ -1,12 +1,44 @@
-const weakSet = new WeakSet();
+class Queue {
+    items = [];
 
-var obj = {};
+    enqueue(elemento) {
+        this.items.push(elemento);
+    }
 
-weakSet.add(obj);
+    dequeue() {
+        this.items.shift();
+    }
 
-// console.log(weakSet.has(obj));
+    first() {
+        return this.items[0];
+    }
 
-obj = null;
+    last() {
+        return this.items.at(-1);
+    }
 
+    isEmpty() {
+        return this.items.length === 0;
+    }
 
-console.log(weakSet.has(obj));
+    size() {
+        return this.items.length;
+    }
+}
+
+const queue = new Queue();
+
+queue.enqueue(1);
+queue.enqueue(2);
+queue.enqueue(3);
+queue.enqueue(5);
+queue.enqueue(4);
+
+// queue.dequeue();
+
+// console.log(queue.first());
+// console.log(queue.last());
+console.log(queue.isEmpty());
+console.log(queue.size());
+
+console.log(queue.items);
